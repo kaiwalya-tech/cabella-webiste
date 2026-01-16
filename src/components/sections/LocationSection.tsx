@@ -17,7 +17,7 @@ const LocationSection: React.FC = () => {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.523!2d73.8419!3d18.5812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9f5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sShop%207%2C%20Sai%20Saheb%20Building%2C%20Shiv%20Sai%20Lane%2C%20Pimple%20Saudagar%2C%20Pune%2C%20Maharashtra%20411027!5e0!3m2!1sen!2sin!4v1704969600000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1011.4554321601363!2d73.79376310829453!3d18.599619875438805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b99c8bd48543%3A0x74a0b387ece69469!2sCabella%20Pizzeria!5e0!3m2!1sen!2sin!4v1768577210930!5m2!1sen!2sin"
           />
         </div>
 
