@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LocationSection: React.FC = () => {
-  const locationAddress = "Shop 7, Sai Saheb Building, Shiv Sai lane, Kokane Chowk, opposite Lotus Multi-speciality Hospital, Pimple Saudagar, Pune, Maharashtra 411027";
+//   const locationAddress = "Shop 7, Sai Saheb Building, Shiv Sai lane, Kokane Chowk, opposite Lotus Multi-speciality Hospital, Pimple Saudagar, Pune, Maharashtra 411027";
   const locationTime = "Time: 12 PM – 11 PM";
 
   return (
