@@ -10,10 +10,71 @@ import gallery8 from '../../assets/images/gallery8_c3r3.png';
 import gallery9 from '../../assets/images/gallery9_c4r3.png';
 
 const GallerySection: React.FC = () => {
+  const textContent = "At Cabella, pizza is an art — slow-fermented sourdough, wood-fired perfection, premium cheeses, and San Marzano sauce. True Neapolitan craft, vegetarian style.";
+
+  // Column 1: gallery1, text_yellow, gallery7
+  const column1Items = [
+    { type: 'image', src: gallery1, alt: 'Gallery 1' },
+    { type: 'text', bgColor: '#F9E6AC', textColor: 'black' },
+    { type: 'image', src: gallery7, alt: 'Gallery 7' },
+  ];
+
+  // Column 2: gallery2, gallery4, text_orange
+  const column2Items = [
+    { type: 'image', src: gallery2, alt: 'Gallery 2' },
+    { type: 'image', src: gallery4, alt: 'Gallery 4' },
+    { type: 'text', bgColor: '#F78022', textColor: 'white' },
+  ];
+
+  // Column 3: gallery3, gallery5, gallery8
+  const column3Items = [
+    { type: 'image', src: gallery3, alt: 'Gallery 3' },
+    { type: 'image', src: gallery5, alt: 'Gallery 5' },
+    { type: 'image', src: gallery8, alt: 'Gallery 8' },
+  ];
+
+  // Column 4: text_brown, gallery6, gallery9
+  const column4Items = [
+    { type: 'text', bgColor: '#581B04', textColor: 'white' },
+    { type: 'image', src: gallery6, alt: 'Gallery 6' },
+    { type: 'image', src: gallery9, alt: 'Gallery 9' },
+  ];
+
+  const renderColumn = (items: any[]) => (
+    <div className="flex flex-col w-full h-full">
+      {items.map((item, index) => (
+        <div
+          key={index}
+          className={item.type === 'image' ? 'flex-shrink-0 w-full' : 'flex-grow w-full'}
+        >
+          {item.type === 'image' ? (
+            <img 
+              src={item.src} 
+              alt={item.alt}
+              className="w-full h-auto object-cover block"
+            />
+          ) : (
+            <div 
+              className="w-full h-full flex items-center justify-center p-4 md:p-6 lg:p-8"
+              style={{ backgroundColor: item.bgColor }}
+            >
+              <p 
+                className="font-lexend text-xs sm:text-sm md:text-base leading-relaxed text-center"
+                style={{ color: item.textColor }}
+              >
+                {textContent}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+
   return (
-    <section id="gallery" className="w-full bg-white scroll-smooth overflow-x-hidden">
+    <section id="gallery" className="w-full bg-white scroll-smooth overflow-x-hidden py-8 md:py-12 lg:py-16">
       {/* Gallery Heading */}
-      <div className="w-full py-8 md:py-12 flex justify-center">
+      <div className="w-full mb-8 md:mb-12 lg:mb-16 flex justify-center px-4">
         <h2 
           className="font-impact text-4xl sm:text-5xl md:text-6xl font-normal px-8 py-3 rounded-sm"
           style={{
@@ -25,123 +86,54 @@ const GallerySection: React.FC = () => {
         </h2>
       </div>
 
-      {/* Gallery Grid - 4 Columns, Variable Heights */}
-      <div className="w-full" style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '1px',
-        gridAutoRows: 'max-content',
-        backgroundColor: '#ffffff',
-      }}>
-        {/* C1R1 - Gallery Image (Tall) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '1 / 2' }}>
-          <img 
-            src={gallery1} 
-            alt="Gallery 1"
-            className="w-full h-auto object-contain block"
-          />
+      {/* Gallery Container - Column-Driven Layout */}
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        {/* Desktop: 4 columns */}
+        <div className="hidden lg:flex w-full gap-0" style={{ height: 'auto' }}>
+          <div className="flex-1 min-h-screen">
+            {renderColumn(column1Items)}
+          </div>
+          <div className="flex-1 min-h-screen">
+            {renderColumn(column2Items)}
+          </div>
+          <div className="flex-1 min-h-screen">
+            {renderColumn(column3Items)}
+          </div>
+          <div className="flex-1 min-h-screen">
+            {renderColumn(column4Items)}
+          </div>
         </div>
 
-        {/* C2R1 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '2 / 3' }}>
-          <img 
-            src={gallery2} 
-            alt="Gallery 2"
-            className="w-full h-auto object-contain block"
-          />
+        {/* Tablet: 2 columns */}
+        <div className="hidden md:flex lg:hidden w-full gap-0 flex-wrap">
+          <div className="w-1/2">
+            {renderColumn(column1Items)}
+          </div>
+          <div className="w-1/2">
+            {renderColumn(column2Items)}
+          </div>
+          <div className="w-1/2">
+            {renderColumn(column3Items)}
+          </div>
+          <div className="w-1/2">
+            {renderColumn(column4Items)}
+          </div>
         </div>
 
-        {/* C3R1 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '3 / 4' }}>
-          <img 
-            src={gallery3} 
-            alt="Gallery 3"
-            className="w-full h-auto object-contain block"
-          />
-        </div>
-
-        {/* C4R1 - Text Box Brown (Tall) */}
-        <div 
-          className="w-full flex items-center justify-center p-6"
-          style={{ gridColumn: '4 / 5', backgroundColor: '#581B04', minHeight: '200px' }}
-        >
-          <p className="font-lexend text-sm md:text-base text-white text-center leading-relaxed">
-            At Cabella, pizza is an art — slow-fermented sourdough, wood-fired perfection, premium cheeses, and San Marzano sauce. True Neapolitan craft, vegetarian style.
-          </p>
-        </div>
-
-        {/* C1R2 - Text Box Yellow (Medium) */}
-        <div 
-          className="w-full flex items-center justify-center p-6"
-          style={{ gridColumn: '1 / 2', backgroundColor: '#F9E6AC', minHeight: '150px' }}
-        >
-          <p className="font-lexend text-sm md:text-base text-dark text-center leading-relaxed">
-            At Cabella, pizza is an art — slow-fermented sourdough, wood-fired perfection, premium cheeses, and San Marzano sauce. True Neapolitan craft, vegetarian style.
-          </p>
-        </div>
-
-        {/* C2R2 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '2 / 3' }}>
-          <img 
-            src={gallery4} 
-            alt="Gallery 4"
-            className="w-full h-auto object-contain block"
-          />
-        </div>
-
-        {/* C3R2 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '3 / 4' }}>
-          <img 
-            src={gallery5} 
-            alt="Gallery 5"
-            className="w-full h-auto object-contain block"
-          />
-        </div>
-
-        {/* C4R2 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '4 / 5' }}>
-          <img 
-            src={gallery6} 
-            alt="Gallery 6"
-            className="w-full h-auto object-contain block"
-          />
-        </div>
-
-        {/* C1R3 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '1 / 2' }}>
-          <img 
-            src={gallery7} 
-            alt="Gallery 7"
-            className="w-full h-auto object-contain block"
-          />
-        </div>
-
-        {/* C2R3 - Text Box Orange (Tall) */}
-        <div 
-          className="w-full flex items-center justify-center p-6"
-          style={{ gridColumn: '2 / 3', backgroundColor: '#F78022', minHeight: '200px' }}
-        >
-          <p className="font-lexend text-sm md:text-base text-white text-center leading-relaxed">
-            At Cabella, pizza is an art — slow-fermented sourdough, wood-fired perfection, premium cheeses, and San Marzano sauce. True Neapolitan craft, vegetarian style.
-          </p>
-        </div>
-
-        {/* C3R3 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '3 / 4' }}>
-          <img 
-            src={gallery8} 
-            alt="Gallery 8"
-            className="w-full h-auto object-contain block"
-          />
-        </div>
-
-        {/* C4R3 - Gallery Image (Medium) */}
-        <div className="w-full bg-white overflow-hidden" style={{ gridColumn: '4 / 5' }}>
-          <img 
-            src={gallery9} 
-            alt="Gallery 9"
-            className="w-full h-auto object-contain block"
-          />
+        {/* Mobile: 1 column */}
+        <div className="flex md:hidden w-full flex-col gap-0">
+          <div className="w-full">
+            {renderColumn(column1Items)}
+          </div>
+          <div className="w-full">
+            {renderColumn(column2Items)}
+          </div>
+          <div className="w-full">
+            {renderColumn(column3Items)}
+          </div>
+          <div className="w-full">
+            {renderColumn(column4Items)}
+          </div>
         </div>
       </div>
     </section>

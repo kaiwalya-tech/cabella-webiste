@@ -50,12 +50,12 @@ const OffersComboSection: React.FC = () => {
       </div>
 
       {/* Combos Grid */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10 max-w-7xl mx-auto">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 pb-24 sm:pb-32 md:pb-40 lg:pb-48">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-24 sm:gap-16 md:gap-10 max-w-7xl mx-auto">
           {combos.map((combo) => (
             <div 
               key={combo.id} 
-              className="flex flex-col items-center relative h-auto pb-12"
+              className="flex flex-col items-center relative h-auto pb-24 sm:pb-24 md:pb-24 lg:pb-28"
             >
               {/* Image Container - Base Layer */}
               <div className="w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden shadow-md hover:shadow-lg bg-white" style={{ boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.1)' }}>

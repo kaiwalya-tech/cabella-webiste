@@ -125,10 +125,10 @@ const MenuSection: React.FC = () => {
 
   return (
     <section id="menu" className="w-full bg-white scroll-smooth overflow-x-hidden">
-      {/* ORDER NOW Heading - Center Aligned */}
-      <div className="w-full py-6 md:py-8 flex justify-center">
+      {/* ORDER NOW Heading - Left Aligned with 10% right offset */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-0 flex justify-start">
         <h2 
-          className="font-impact text-5xl sm:text-6xl md:text-7xl font-normal drop-shadow-lg px-12 py-4 rounded-lg"
+          className="font-impact text-5xl sm:text-6xl md:text-7xl font-normal px-6 py-4 rounded-t-lg ml-[10%]"
           style={{
             color: '#ffffff',
             WebkitTextStroke: '1.5px #521717',
@@ -141,7 +141,7 @@ const MenuSection: React.FC = () => {
 
       {/* Category Tabs */}
       <div className="w-full bg-primary overflow-x-auto shadow-md">
-        <div className="flex justify-center gap-0 px-4 sm:px-6 lg:px-8 py-0 min-w-min flex-wrap">
+        <div className="flex justify-center gap-0 px-4 sm:px-6 lg:px-8 py-4 min-w-min flex-wrap">
           {categories.map((category, index) => (
             <div key={index} className="flex items-stretch">
               <button
