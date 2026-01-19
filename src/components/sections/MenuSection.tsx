@@ -128,7 +128,7 @@ const MenuSection: React.FC = () => {
       {/* ORDER NOW Heading - Left Aligned with 10% right offset */}
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-0 flex justify-start">
         <h2 
-          className="font-impact text-5xl sm:text-6xl md:text-7xl font-normal px-6 py-4 rounded-t-lg ml-[10%]"
+          className="font-impact text-3xl sm:text-4xl md:text-5xl font-normal px-6 py-4 ml-[10%]"
           style={{
             color: '#ffffff',
             WebkitTextStroke: '1.5px #521717',
@@ -210,7 +210,7 @@ const MenuSection: React.FC = () => {
                     ₹{item.price}
                   </span>
                   <button className="px-4 py-2 bg-white border-2 border-primary text-primary font-lexend text-sm font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-sm hover:shadow-md active:scale-95">
-                    Add to Cart
+                    Order Now
                   </button>
                 </div>
               </div>

@@ -38,7 +38,7 @@ const OffersComboSection: React.FC = () => {
       {/* OFFERS & COMBOS Heading - Center Aligned */}
       <div className="w-full py-6 md:py-8 flex justify-center">
         <h2 
-          className="font-impact text-5xl sm:text-6xl md:text-7xl font-normal drop-shadow-lg px-12 py-4 rounded-lg"
+          className="font-impact text-3xl sm:text-4xl md:text-5xl font-normal px-12 py-4"
           style={{
             color: '#ffffff',
             WebkitTextStroke: '1.5px #521717',
@@ -83,10 +83,10 @@ const OffersComboSection: React.FC = () => {
                   {combo.description}
                 </p>
 
-                {/* Add to Cart Button - Half outside the box */}
+                {/* Order Now Button - Half outside the box */}
                 <div className="flex justify-center absolute bottom-0 left-0 right-0 transform translate-y-1/2">
                   <button className="px-8 py-2 bg-white border-2 border-primary text-primary font-lexend text-sm md:text-base font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 whitespace-nowrap">
-                    Add to Cart
+                    Order Now
                   </button>
                 </div>
               </div>

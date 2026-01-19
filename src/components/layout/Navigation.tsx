@@ -13,10 +13,10 @@ const Navigation: React.FC = () => {
   };
 
   const navItems = [
-    { label: 'Our Story', href: '#story' },
     { label: 'Menu', href: '#menu' },
-    { label: 'Order Online', href: '#order' },
-    { label: 'Reserve Table', href: '#reserve' },
+    { label: 'Our Story', href: '#story' },
+    { label: 'Ingredients', href: '#ingredients' },
+    { label: 'Contact', href: '#location' },
   ];
 
   return (
