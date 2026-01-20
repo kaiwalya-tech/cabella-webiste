@@ -25,8 +25,8 @@ const FooterSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Four Column Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-12 md:mb-16">
+        {/* Three Column Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12 md:mb-16">
           {/* About Us */}
           <div>
             <h3 className="font-lexend text-base md:text-lg font-semibold text-dark mb-4">
@@ -34,18 +34,18 @@ const FooterSection: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
-                  Newsletter
+                <a href="#menu" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
+                  Menu
                 </a>
               </li>
               <li>
-                <a href="#" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
-                  Blog
+                <a href="#story" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
+                  Our Story
                 </a>
               </li>
               <li>
-                <a href="#" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
-                  Pop-up
+                <a href="#ingredients" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
+                  Ingredients
                 </a>
               </li>
             </ul>
@@ -59,30 +59,6 @@ const FooterSection: React.FC = () => {
             <a href="tel:+919860926060" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
               (+91) 986 092 6060
             </a>
-          </div>
-
-          {/* FAQs */}
-          <div>
-            <h3 className="font-lexend text-base md:text-lg font-semibold text-dark mb-4">
-              FAQ's
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
-                  Why Sourdough Pizza is Better for Your Gut
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
-                  How Cabella Makes Its Own Sauce
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-lexend text-sm md:text-base font-normal text-gray-600 hover:text-dark transition-colors">
-                  The Real Story Behind Wood-fired Oven
-                </a>
-              </li>
-            </ul>
           </div>
 
           {/* Follow Us On */}
@@ -105,23 +81,6 @@ const FooterSection: React.FC = () => {
                   fill="currentColor"
                 >
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110-2.881 1.44 1.44 0 010 2.881z" />
-                </svg>
-              </a>
-
-              {/* YouTube/Square Icon */}
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-dark hover:opacity-70 transition-opacity"
-              >
-                <svg 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M23 0H1C.4 0 0 .4 0 1v22c0 .6.4 1 1 1h22c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                 </svg>
               </a>
 
@@ -151,11 +110,16 @@ const FooterSection: React.FC = () => {
 
       {/* Copyright Section */}
       <div className="w-full px-10 sm:px-16 lg:px-20 py-8 md:py-10">
-        <p className="font-lexend text-xs sm:text-sm md:text-base font-normal text-dark">
-          All Rights Reserved | All product images are original and are our actual products. They are property of Cabella Pizzeria.
-          <br className="hidden sm:block" />
-          © Cabella Pizzeria 2025
-        </p>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+          <p className="font-lexend text-xs sm:text-sm md:text-base font-normal text-dark">
+            All Rights Reserved | All product images are original and are our actual products. They are property of Cabella Pizzeria.
+            <br className="hidden sm:block" />
+            © Cabella Pizzeria 2026
+          </p>
+          <p className="font-lexend text-xs sm:text-sm md:text-base font-normal text-dark">
+            Crafted by <a href="https://www.tubo.digital/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">tubo.digital</a>
+          </p>
+        </div>
       </div>
     </footer>
   );
